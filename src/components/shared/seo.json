@@ -1,45 +1,54 @@
 {
   "collectionName": "components_shared_seos",
   "info": {
-    "name": "Seo",
-    "icon": "allergies",
-    "displayName": "Seo-2",
+    "displayName": "seo",
+    "icon": "search",
     "description": ""
   },
   "options": {},
   "attributes": {
     "metaTitle": {
       "type": "string",
+      "maxLength": 60,
       "required": true
     },
     "metaDescription": {
-      "type": "text",
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 160,
       "required": true
     },
-    "keywords": {
-      "type": "text"
-    },
-    "canonicalURL": {
-      "type": "string"
-    },
-    "metaRobots": {
-      "type": "string"
-    },
-    "shareImage": {
+    "metaImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos"
       ]
     },
-    "openGraph": {
+    "metaSocial": {
       "type": "component",
-      "component": "shared.open-graph",
-      "repeatable": false
+      "component": "shared.meta-social",
+      "repeatable": true
+    },
+    "keywords": {
+      "type": "text",
+      "regex": "[^,]+"
+    },
+    "metaRobots": {
+      "type": "string",
+      "regex": "[^,]+"
     },
     "structuredData": {
       "type": "json"
+    },
+    "metaViewport": {
+      "type": "string"
+    },
+    "canonicalURL": {
+      "type": "string"
     }
   }
 }

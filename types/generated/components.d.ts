@@ -11,16 +11,27 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedOpenGraph extends Struct.ComponentSchema {
-  collectionName: 'components_shared_open_graphs';
+export interface SharedMetaSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_meta_socials';
   info: {
-    displayName: 'Open Graph';
-    icon: 'search';
+    description: '';
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
   };
   attributes: {
-    ogDescription: Schema.Attribute.Text;
-    ogImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ogTitle: Schema.Attribute.String;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
   };
 }
 
@@ -40,18 +51,28 @@ export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
     description: '';
-    displayName: 'Seo-2';
-    icon: 'allergies';
-    name: 'Seo';
+    displayName: 'seo';
+    icon: 'search';
   };
   attributes: {
     canonicalURL: Schema.Attribute.String;
     keywords: Schema.Attribute.Text;
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+        minLength: 50;
+      }>;
+    metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
     metaRobots: Schema.Attribute.String;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
-    shareImage: Schema.Attribute.Media<'images'>;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Schema.Attribute.String;
     structuredData: Schema.Attribute.JSON;
   };
 }
@@ -73,7 +94,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.media': SharedMedia;
-      'shared.open-graph': SharedOpenGraph;
+      'shared.meta-social': SharedMetaSocial;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.social-link': SharedSocialLink;

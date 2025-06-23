@@ -46,7 +46,7 @@
         "audios"
       ]
     },
-    "SEO": {
+    "Seo": {
       "type": "component",
       "pluginOptions": {
         "i18n": {

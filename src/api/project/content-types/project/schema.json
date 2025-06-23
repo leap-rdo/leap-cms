@@ -76,6 +76,16 @@
       "relation": "manyToOne",
       "target": "api::project-category.project-category",
       "inversedBy": "projects"
+    },
+    "Seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

@@ -414,7 +414,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'shared.seo', false> &
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -465,7 +465,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    defaultSEO: Schema.Attribute.Component<'shared.seo', false>;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -524,7 +524,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'shared.seo', false> &
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -630,6 +630,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project-category.project-category'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -691,7 +697,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'api::service.service'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'shared.seo', false> &
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -770,6 +776,12 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.UID<'name'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
