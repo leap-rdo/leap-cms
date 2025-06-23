@@ -57,7 +57,7 @@
       }
     },
     "whyUs": {
-      "type": "richtext",
+      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -65,7 +65,7 @@
       }
     },
     "partners": {
-      "type": "richtext",
+      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true

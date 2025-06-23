@@ -407,7 +407,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    partners: Schema.Attribute.RichText &
+    partners: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -441,7 +441,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    whyUs: Schema.Attribute.RichText &
+    whyUs: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
