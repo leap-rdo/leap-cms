@@ -3,7 +3,7 @@
   "info": {
     "name": "Seo",
     "icon": "allergies",
-    "displayName": "Seo",
+    "displayName": "Seo-2",
     "description": ""
   },
   "options": {},
@@ -16,11 +16,30 @@
       "type": "text",
       "required": true
     },
+    "keywords": {
+      "type": "text"
+    },
+    "canonicalURL": {
+      "type": "string"
+    },
+    "metaRobots": {
+      "type": "string"
+    },
     "shareImage": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "openGraph": {
+      "type": "component",
+      "component": "shared.open-graph",
+      "repeatable": false
+    },
+    "structuredData": {
+      "type": "json"
     }
   }
 }

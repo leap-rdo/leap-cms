@@ -1,11 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "abouts",
+  "kind": "collectionType",
+  "collectionName": "services",
   "info": {
-    "singularName": "about",
-    "pluralName": "abouts",
-    "displayName": "About",
-    "description": "Write about yourself and the content you create"
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
   },
   "options": {
     "draftAndPublish": true
@@ -24,7 +23,16 @@
         }
       }
     },
-    "about": {
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "title"
+    },
+    "description": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -32,39 +40,22 @@
         }
       }
     },
-    "vision": {
-      "type": "text",
+    "image": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "mission": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "whoWeServe": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "whyUs": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "partners": {
+    "content": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
