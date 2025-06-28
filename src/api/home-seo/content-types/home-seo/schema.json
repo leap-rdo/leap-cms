@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_seos",
+  "info": {
+    "singularName": "home-seo",
+    "pluralName": "home-seos",
+    "displayName": "Home Seo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

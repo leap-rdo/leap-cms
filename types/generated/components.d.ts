@@ -1,5 +1,14 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedContactIcons extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_icons';
+  info: {
+    displayName: 'Contact Icons';
+    icon: 'paperPlane';
+  };
+  attributes: {};
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -77,27 +86,14 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedSocialLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_social_links';
-  info: {
-    displayName: 'Social Link';
-    icon: 'link';
-  };
-  attributes: {
-    link: Schema.Attribute.String;
-    platform: Schema.Attribute.String;
-    username: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.contact-icons': SharedContactIcons;
       'shared.media': SharedMedia;
       'shared.meta-social': SharedMetaSocial;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
-      'shared.social-link': SharedSocialLink;
     }
   }
 }

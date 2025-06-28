@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home Banner"
   },
   "options": {
     "draftAndPublish": true
@@ -35,7 +35,7 @@
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "multiple": false,
@@ -45,16 +45,6 @@
         "videos",
         "audios"
       ]
-    },
-    "Seo": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.seo",
-      "repeatable": false
     }
   }
 }

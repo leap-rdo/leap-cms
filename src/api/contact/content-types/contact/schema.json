@@ -1,10 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "team_members",
+  "kind": "singleType",
+  "collectionName": "contacts",
   "info": {
-    "singularName": "team-member",
-    "pluralName": "team-members",
-    "displayName": "Team Member"
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -23,7 +23,7 @@
         }
       }
     },
-    "position": {
+    "subtitle": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -31,37 +31,13 @@
         }
       }
     },
-    "bio": {
+    "description": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
-    },
-    "image": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "slug": {
-      "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "targetField": "name"
     },
     "Seo": {
       "type": "component",
