@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_point_texts",
+  "info": {
+    "displayName": "Point Text"
+  },
+  "options": {},
+  "attributes": {
+    "point": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

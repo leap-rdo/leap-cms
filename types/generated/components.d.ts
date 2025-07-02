@@ -28,19 +28,41 @@ export interface SharedMetaSocial extends Struct.ComponentSchema {
     icon: 'project-diagram';
   };
   attributes: {
-    description: Schema.Attribute.String &
+    ogDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 65;
       }>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Schema.Attribute.Required;
-    title: Schema.Attribute.String &
+    ogImage: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    ogTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
+    twitterDescription: Schema.Attribute.Text;
+    twitterImage: Schema.Attribute.Media<'images' | 'files'>;
+    twitterTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPartner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_partners';
+  info: {
+    displayName: 'Partner';
+  };
+  attributes: {
+    Icon: Schema.Attribute.Media<'images' | 'files'>;
+    Name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPointText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_point_texts';
+  info: {
+    displayName: 'Point Text';
+  };
+  attributes: {
+    point: Schema.Attribute.Text;
   };
 }
 
@@ -75,7 +97,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
     metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
     metaRobots: Schema.Attribute.String;
-    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', false>;
     metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -86,14 +108,29 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedServicesSummary extends Struct.ComponentSchema {
+  collectionName: 'components_shared_services_summaries';
+  info: {
+    displayName: 'Services Summary';
+  };
+  attributes: {
+    Development: Schema.Attribute.Text;
+    Operation: Schema.Attribute.Text;
+    Research: Schema.Attribute.Text;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.contact-icons': SharedContactIcons;
       'shared.media': SharedMedia;
       'shared.meta-social': SharedMetaSocial;
+      'shared.partner': SharedPartner;
+      'shared.point-text': SharedPointText;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.services-summary': SharedServicesSummary;
     }
   }
 }

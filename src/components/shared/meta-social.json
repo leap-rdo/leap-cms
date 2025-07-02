@@ -7,32 +7,38 @@
   },
   "options": {},
   "attributes": {
-    "socialNetwork": {
-      "type": "enumeration",
-      "enum": [
-        "Facebook",
-        "Twitter"
-      ],
+    "ogTitle": {
+      "type": "string",
+      "maxLength": 60,
       "required": true
     },
-    "title": {
-      "type": "string",
-      "required": true,
-      "maxLength": 60
-    },
-    "description": {
-      "type": "string",
+    "ogDescription": {
+      "type": "text",
       "maxLength": 65,
       "required": true
     },
-    "image": {
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
+      ]
+    },
+    "twitterTitle": {
+      "type": "string"
+    },
+    "twitterDescription": {
+      "type": "text"
+    },
+    "twitterImage": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

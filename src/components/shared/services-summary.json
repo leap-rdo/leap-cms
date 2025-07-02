@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_services_summaries",
+  "info": {
+    "displayName": "Services Summary"
+  },
+  "options": {},
+  "attributes": {
+    "Research": {
+      "type": "text"
+    },
+    "Development": {
+      "type": "text"
+    },
+    "Operation": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -31,7 +31,7 @@
     "metaSocial": {
       "type": "component",
       "component": "shared.meta-social",
-      "repeatable": true
+      "repeatable": false
     },
     "keywords": {
       "type": "text",

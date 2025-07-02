@@ -40,7 +40,7 @@
         }
       }
     },
-    "coverImage": {
+    "image": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -50,9 +50,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "description": {
@@ -71,7 +69,7 @@
         }
       }
     },
-    "project_category": {
+    "projectCategory": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::project-category.project-category",

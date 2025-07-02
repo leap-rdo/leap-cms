@@ -57,20 +57,34 @@
       }
     },
     "whyUs": {
-      "type": "blocks",
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.point-text",
+      "repeatable": true
+    },
+    "services": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.services-summary",
+      "repeatable": false
     },
     "partners": {
-      "type": "blocks",
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.partner",
+      "repeatable": true
     },
     "Seo": {
       "type": "component",

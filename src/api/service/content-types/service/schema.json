@@ -55,13 +55,15 @@
         "audios"
       ]
     },
-    "content": {
-      "type": "richtext",
+    "point": {
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.point-text",
+      "repeatable": true
     },
     "Seo": {
       "type": "component",
