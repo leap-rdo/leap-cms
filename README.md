@@ -30,6 +30,18 @@ DEFAULT_REPLY_TO=contact@yourdomain.com
 
 ---
 
+## Import Data:
+
+Run command:
+
+```
+npm run strapi import -- -f export_20250702231406.tar.gz.enc
+```
+
+Encription Key = leap
+
+---
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
